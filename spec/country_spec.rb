@@ -6,6 +6,16 @@ describe ISO3166::Country do
 
   let(:country) { ISO3166::Country.search('US') }
 
+  it 'allows to create a country object from a symbol representation of the alpha2 code' do
+    country = described_class.new(:us)
+    country.data.should_not be_nil
+  end
+
+  it 'allows to create a country object from a lowercase alpha2 code' do
+    country = described_class.new("us")
+    country.data.should_not be_nil
+  end
+
   it 'should return 3166 number' do
     country.number.should == '840'
   end
@@ -23,7 +33,7 @@ describe ISO3166::Country do
   end
 
   it 'should return alternate names' do
-    country.names.should == ["United States of America", "Vereinigte Staaten von Amerika", "États-Unis", "Estados Unidos", "アメリカ合衆国"]
+    country.names.should == ["United States of America", "Vereinigte Staaten von Amerika", "États-Unis", "Estados Unidos", "アメリカ合衆国", "Verenigde Staten"]
   end
 
   it 'should return translations' do
@@ -95,11 +105,11 @@ describe ISO3166::Country do
     end
 
     it 'should return a hash with all sub divisions' do
-      country.subdivisions.should have(57).states
+      country.subdivisions.should have(60).states
     end
 
     it 'should be available through states' do
-      country.states.should have(57).states
+      country.states.should have(60).states
     end
   end
 
@@ -136,7 +146,7 @@ describe ISO3166::Country do
       countries = ISO3166::Country.all
       countries.should be_an(Array)
       countries.first.should be_an(Array)
-      countries.should have(247).countries
+      countries.should have(250).countries
     end
 
     it "should allow to customize each country representation passing a block to the method" do
@@ -144,7 +154,7 @@ describe ISO3166::Country do
       countries.should be_an(Array)
       countries.first.should be_an(Array)
       countries.first.should have(3).fields
-      countries.should have(247).countries
+      countries.should have(250).countries
     end
   end
 
@@ -182,6 +192,32 @@ describe ISO3166::Country do
     end
   end
 
+  describe "currency codes are missing in the data sources", focus: true do
+    context "for data source: countries.yaml" do
+      context "when a currency_code key is missing" do
+        subject { described_class.new("MO").currency }
+        before do
+          described_class.any_instance.stub currency_code: nil
+        end
+        it "provides an ISO4217::Currency object from the base currency" do
+          subject.should be_a(ISO4217::Currency)
+          subject.code.should  == ISO4217::Currency.base_currency
+        end
+      end
+
+      context "when a currency_code key is present, but the value is missing" do
+        subject { described_class.new("MO").currency }
+        before do
+          described_class.any_instance.stub currency_code: ""
+        end
+        it "provides an ISO3166::Country::CurrencyProxy object" do
+          subject.should be_a(ISO3166::Country::CurrencyProxy)
+        end
+      end
+
+    end
+  end
+
   describe "Country class" do
     context "when loaded via 'iso3166' existance" do
       subject { defined?(Country) }
@@ -202,6 +238,12 @@ describe ISO3166::Country do
         subject { Country.superclass }
 
         it { should == ISO3166::Country }
+      end
+
+      describe 'to_s' do
+        it 'should return the country name' do
+          Country.new('GB').to_s.should == 'United Kingdom'
+        end
       end
     end
   end
@@ -381,4 +423,11 @@ describe ISO3166::Country do
       netherlands.in_eu?.should be_true
     end
   end
+
+  describe 'to_s' do
+    it 'should return the country name' do
+      ISO3166::Country.new('GB').to_s.should == 'United Kingdom'
+    end
+  end
+
 end

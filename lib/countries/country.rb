@@ -41,7 +41,7 @@ class ISO3166::Country
   attr_reader :data
 
   def initialize(country_data)
-    @data = country_data.is_a?(Hash) ? country_data : Data[country_data]
+    @data = country_data.is_a?(Hash) ? country_data : Data[country_data.to_s.upcase]
   end
 
   def valid?
@@ -53,12 +53,16 @@ class ISO3166::Country
   end
 
   def currency
-    ccy_code = @data['currency'] || ISO4217::Currency.base_currency
+    ccy_code = currency_code || ISO4217::Currency.base_currency
     if (ccy = ISO4217::Currency.from_code(ccy_code))
       ccy
     else
       CurrencyProxy.new(ccy_code, ccy_code)
     end
+  end
+
+  def currency_code
+    @data['currency']
   end
 
   def subdivisions
@@ -73,6 +77,10 @@ class ISO3166::Country
 
   def in_eu?
     @data['eu_member'].nil? ? false : @data['eu_member']
+  end
+
+  def to_s
+    @data['name']
   end
 
   class << self
@@ -111,7 +119,7 @@ class ISO3166::Country
 
       Data.select do |_, v|
         attributes.map do |attr|
-          Array(v[attr]).any?{ |n| value === n.downcase }
+          Array(v[attr]).any?{ |n| value === n.to_s.downcase }
         end.include?(true)
       end
     end
