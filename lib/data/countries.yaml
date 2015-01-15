@@ -457,7 +457,7 @@ AR:
   nationality: Argentinean
   postal_code: true
 AS:
-  continent: Australia
+  continent: Oceania
   alpha2: AS
   alpha3: ASM
   country_code: '1'
@@ -554,7 +554,7 @@ AT:
   eu_member: true
   postal_code: true
 AU:
-  continent: Australia
+  continent: Oceania
   address_format: ! '{{recipient}}
 
     {{street}}
@@ -1848,7 +1848,7 @@ CI:
   nationality: Ivorian
   postal_code: false
 CK:
-  continent: Australia
+  continent: Oceania
   alpha2: CK
   alpha3: COK
   country_code: '682'
@@ -2941,7 +2941,7 @@ FI:
   eu_member: true
   postal_code: true
 FJ:
-  continent: Australia
+  continent: Oceania
   alpha2: FJ
   alpha3: FJI
   country_code: '679'
@@ -3023,7 +3023,7 @@ FK:
   nationality: Falkland Islander
   postal_code: true
 FM:
-  continent: Australia
+  continent: Oceania
   alpha2: FM
   alpha3: FSM
   country_code: '691'
@@ -3792,7 +3792,7 @@ GT:
   nationality: Guatemalan
   postal_code: true
 GU:
-  continent: Australia
+  continent: Oceania
   alpha2: GU
   alpha3: GUM
   country_code: '1'
@@ -4894,7 +4894,7 @@ KH:
   nationality: Cambodian
   postal_code: true
 KI:
-  continent: Australia
+  continent: Oceania
   alpha2: KI
   alpha3: KIR
   country_code: '686'
@@ -5912,7 +5912,7 @@ MG:
   nationality: Malagasy
   postal_code: true
 MH:
-  continent: Australia
+  continent: Oceania
   alpha2: MH
   alpha3: MHL
   country_code: '692'
@@ -6152,7 +6152,7 @@ MO:
   nationality: Chinese
   postal_code: false
 MP:
-  continent: Australia
+  continent: Oceania
   alpha2: MP
   alpha3: MNP
   country_code: '1'
@@ -6626,7 +6626,7 @@ NA:
   nationality: Namibian
   postal_code: true
 NC:
-  continent: Australia
+  continent: Oceania
   alpha2: NC
   alpha3: NCL
   country_code: '687'
@@ -6703,7 +6703,7 @@ NE:
   nationality: Nigerian
   postal_code: true
 NF:
-  continent: Australia
+  continent: Oceania
   alpha2: NF
   alpha3: NFK
   country_code: '672'
@@ -6952,7 +6952,7 @@ NP:
   nationality: Nepalese
   postal_code: true
 NR:
-  continent: Australia
+  continent: Oceania
   alpha2: NR
   alpha3: NRU
   country_code: '674'
@@ -6989,7 +6989,7 @@ NR:
   nationality: Nauruan
   postal_code: false
 NU:
-  continent: Australia
+  continent: Oceania
   alpha2: NU
   alpha3: NIU
   country_code: '683'
@@ -7025,7 +7025,7 @@ NU:
   nationality: Niuean
   postal_code: false
 NZ:
-  continent: Australia
+  continent: Oceania
   address_format: ! '{{recipient}}
 
     {{street}}
@@ -7198,7 +7198,7 @@ PE:
   nationality: Peruvian
   postal_code: true
 PF:
-  continent: Australia
+  continent: Oceania
   alpha2: PF
   alpha3: PYF
   country_code: '689'
@@ -7238,7 +7238,7 @@ PF:
   nationality: French Polynesian
   postal_code: true
 PG:
-  continent: Australia
+  continent: Oceania
   alpha2: PG
   alpha3: PNG
   country_code: '675'
@@ -7455,7 +7455,7 @@ PM:
   nationality: French
   postal_code: true
 PN:
-  continent: Australia
+  continent: Oceania
   alpha2: PN
   alpha3: PCN
   country_code: ''
@@ -7617,7 +7617,7 @@ PT:
   eu_member: true
   postal_code: true
 PW:
-  continent: Australia
+  continent: Oceania
   alpha2: PW
   alpha3: PLW
   country_code: '680'
@@ -7999,7 +7999,7 @@ SA:
   nationality: Saudi Arabian
   postal_code: false
 SB:
-  continent: Australia
+  continent: Oceania
   alpha2: SB
   alpha3: SLB
   country_code: '677'
@@ -9059,7 +9059,7 @@ TJ:
   nationality: Tadzhik
   postal_code: true
 TK:
-  continent: Australia
+  continent: Oceania
   alpha2: TK
   alpha3: TKL
   country_code: '690'
@@ -9219,7 +9219,7 @@ TN:
   nationality: Tunisian
   postal_code: true
 TO:
-  continent: Australia
+  continent: Oceania
   alpha2: TO
   alpha3: TON
   country_code: '676'
@@ -9348,7 +9348,7 @@ TT:
   nationality: Trinidadian
   postal_code: false
 TV:
-  continent: Australia
+  continent: Oceania
   alpha2: TV
   alpha3: TUV
   country_code: '688'
@@ -9559,7 +9559,7 @@ UG:
   nationality: Ugandan
   postal_code: false
 UM:
-  continent: Australia
+  continent: Oceania
   alpha2: UM
   alpha3: UMI
   country_code: ''
@@ -9962,7 +9962,7 @@ VN:
   nationality: Vietnamese
   postal_code: true
 VU:
-  continent: Australia
+  continent: Oceania
   alpha2: VU
   alpha3: VUT
   country_code: '678'
@@ -10002,7 +10002,7 @@ VU:
   nationality: Ni-Vanuatu
   postal_code: false
 WF:
-  continent: Australia
+  continent: Oceania
   alpha2: WF
   alpha3: WLF
   country_code: '681'
@@ -10042,7 +10042,7 @@ WF:
   nationality: Wallis and Futuna Islander
   postal_code: true
 WS:
-  continent: Australia
+  continent: Oceania
   alpha2: WS
   alpha3: WSM
   country_code: '685'
